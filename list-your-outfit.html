@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Outfit - Rent to Earn | FitMate Rentals</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">Fit<span class="logo-accent">Mate</span></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="lehenga-on-rent-ahmedabad.html">Lehengas</a></li>
+                    <li><a href="sherwani-on-rent-ahmedabad.html">Sherwanis</a></li>
+                    <li><a href="partywear-on-rent-ahmedabad.html">Partywear</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-subtitle">Rent to Earn</p>
+                <h2 class="section-title">List Your Designer Outfit</h2>
+                <p class="section-description">Join our premium host community and start earning from your closet.</p>
+            </div>
+
+            <div class="seo-content">
+                <form id="listOutfitForm">
+                    <div class="grid grid-2">
+                        <div>
+                            <div class="mb-lg">
+                                <label style="display: block; font-weight: 600; margin-bottom: var(--space-xs);">Outfit
+                                    Title</label>
+                                <input type="text" placeholder="e.g. Sabyasachi Red Bridal Lehenga"
+                                    style="width: 100%; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            </div>
+                            <div class="mb-lg">
+                                <label
+                                    style="display: block; font-weight: 600; margin-bottom: var(--space-xs);">Category</label>
+                                <select
+                                    style="width: 100%; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                                    <option>Lehenga</option>
+                                    <option>Sherwani</option>
+                                    <option>Saree</option>
+                                    <option>Party Wear</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-lg">
+                                <label
+                                    style="display: block; font-weight: 600; margin-bottom: var(--space-xs);">Expected
+                                    Rent (per day)</label>
+                                <input type="number" placeholder="₹"
+                                    style="width: 100%; padding: var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md);">
+                            </div>
+                        </div>
+                        <div>
+                            <label style="display: block; font-weight: 600; margin-bottom: var(--space-xs);">Upload
+                                Photos</label>
+                            <div id="dropZone" class="upload-area">
+                                <span class="upload-icon">📸</span>
+                                <p>Drag & Drop photos here or click to browse</p>
+                                <p style="font-size: var(--text-xs); margin-top: var(--space-sm);">Max 5 photos. High
+                                    quality preferred.</p>
+                                <input type="file" id="fileInput" multiple accept="image/*" style="display: none;">
+                            </div>
+                            <div id="filePreview" class="file-preview"></div>
+                        </div>
+                    </div>
+                    <div class="mt-xl text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Submit Listing for Review</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 FitMate Rentals. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="components.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof initDragAndDrop === 'function') {
+                initDragAndDrop('dropZone', 'fileInput', 'filePreview');
+            }
+        });
+    </script>
+</body>
+
+</html>
