@@ -746,9 +746,35 @@ function initEliteDragAndDrop() {
     }
 }
 
+// Auto-Slider Logic
+let autoSliderHandle = null;
+
+function startAutoSliders() {
+    if (autoSliderHandle) clearInterval(autoSliderHandle);
+
+    autoSliderHandle = setInterval(() => {
+        // Find all sliders on the page
+        const sliders = document.querySelectorAll('.product-slider');
+        sliders.forEach(slider => {
+            const productId = parseInt(slider.id.replace('slider-', ''));
+            const product = productCatalog.find(p => p.id === productId);
+
+            if (product && product.images && product.images.length > 1) {
+                // Don't slide if user is hovering
+                const card = slider.closest('.product-card');
+                if (card && !card.matches(':hover')) {
+                    moveSlider(productId, 1);
+                }
+            }
+        });
+    }, 5000);
+}
+
 // Update initialization
 document.addEventListener('DOMContentLoaded', () => {
     initializeCatalog();
     initEliteFAQ();
     initEliteDragAndDrop();
+    startAutoSliders();
 });
+

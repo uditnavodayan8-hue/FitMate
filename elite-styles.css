@@ -1840,3 +1840,112 @@ body {
     background: white;
     transform: translateY(-50%) scale(1.1);
 }
+
+/* --- RESPONSIVENESS (Elite 0.1% Mobile-First) --- */
+
+@media (max-width: 1024px) {
+    .header-content {
+        min-height: auto;
+        padding: 12px 0;
+        gap: 20px;
+    }
+
+    .logo-image {
+        height: 80px;
+    }
+
+    .hero-text h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .header-search {
+        max-width: 100%;
+        order: 3;
+    }
+
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo-section {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .main-nav {
+        gap: 20px;
+        padding: 12px 0;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .catalog-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .catalog-controls {
+        width: 100%;
+    }
+
+    .filter-select {
+        flex: 1;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 20px;
+    }
+
+    .video-section h2 {
+        font-size: 2.5rem !important;
+    }
+
+    .modal-grid {
+        padding: 24px;
+        gap: 24px;
+    }
+
+    .pricing-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-image {
+        height: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .btn-hero-large,
+    .btn-hero-outline {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .product-image-container {
+        height: 480px;
+    }
+}
