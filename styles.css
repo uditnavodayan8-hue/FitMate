@@ -800,6 +800,33 @@ a:hover {
   margin-bottom: 0;
 }
 
+/* === Mobile Optimizations === */
+@media (max-width: 768px) {
+  :root {
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 3rem;
+    --container-padding: 1rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-lg);
+  }
+
+  .section,
+  .section-sm,
+  .section-lg {
+    padding: var(--space-2xl) 0;
+  }
+
+  .hero {
+    padding: var(--space-3xl) 0;
+  }
+}
+
 .mb-sm {
   margin-bottom: var(--space-sm);
 }
