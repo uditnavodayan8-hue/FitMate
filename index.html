@@ -4,470 +4,481 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FitMate - Rental for Every Occasion | India's P2P Fashion Marketplace</title>
   <meta name="description"
-    content="Premium wedding & occasion wear on rent in Ahmedabad. Lehengas, Sherwanis & Partywear - Look Royal, Rent Smart. Save 70-80% with FitMate Rentals.">
-  <meta name="keywords"
-    content="lehenga on rent Ahmedabad, sherwani on rent Ahmedabad, wedding dress rental Ahmedabad, bridal lehenga rental, partywear on rent">
-  <meta name="author" content="FitMate Rentals">
-
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="FitMate Rentals - Premium Wedding & Occasion Wear on Rent in Ahmedabad">
-  <meta property="og:description"
-    content="Look Royal. Rent Smart. Save 70-80% on premium Lehengas, Sherwanis & Partywear in Ahmedabad.">
-  <meta property="og:type" content="website">
-
-  <title>FitMate Rentals - Premium Wedding & Occasion Wear on Rent in Ahmedabad</title>
-
-  <!-- Fonts -->
+    content="Rent designer clothes or list your wardrobe. India's premium peer-to-peer fashion marketplace. Browse wedding wear, party outfits & casual wear across 50+ cities.">
+  <link rel="stylesheet" href="elite-styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
-    rel="stylesheet">
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-  <!-- Header -->
+
+  <!-- Elite Header -->
   <header class="header">
     <div class="container">
-      <nav class="nav">
-        <a href="index.html" class="logo">
-          Fit<span class="logo-accent">Mate</span>
-        </a>
+      <div class="header-content">
+        <div class="logo-section" onclick="window.location.reload()">
+          <img src="logo.jpg" alt="FitMate Logo" class="logo-image">
+        </div>
 
-        <ul class="nav-menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="lehenga-on-rent-ahmedabad.html">Lehengas</a></li>
-          <li><a href="sherwani-on-rent-ahmedabad.html">Sherwanis</a></li>
-          <li><a href="partywear-on-rent-ahmedabad.html">Partywear</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="header-search">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.35-4.35"></path>
+          </svg>
+          <input type="text" placeholder="Search for lehengas, sherwanis, sarees..." id="headerSearch"
+            onkeypress="handleSearchKeypress(event)">
+        </div>
 
-        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      </nav>
-
-      <div class="mobile-menu">
-        <div class="container">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="lehenga-on-rent-ahmedabad.html">Lehengas</a></li>
-            <li><a href="sherwani-on-rent-ahmedabad.html">Sherwanis</a></li>
-            <li><a href="partywear-on-rent-ahmedabad.html">Partywear</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
+        <div class="header-actions">
+          <button class="btn-icon" onclick="window.location.href='list-your-outfit.html'" title="List Your Outfit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+          <button class="btn-text" onclick="showLogin()">Login</button>
+          <button class="btn-primary-sm" onclick="showSignup()">Sign Up</button>
         </div>
       </div>
+
+      <nav class="main-nav">
+        <a href="#" class="nav-link active" onclick="event.preventDefault(); filterCategory('all')">All
+          Products</a>
+        <a href="#" class="nav-link" onclick="event.preventDefault(); filterCategory('lehenga')">Lehengas</a>
+        <a href="#" class="nav-link" onclick="event.preventDefault(); filterCategory('sherwani')">Sherwanis</a>
+        <a href="#" class="nav-link" onclick="event.preventDefault(); filterCategory('saree')">Sarees</a>
+        <a href="#" class="nav-link" onclick="event.preventDefault(); filterCategory('suit')">Suits &
+          Blazers</a>
+        <a href="#" class="nav-link" onclick="event.preventDefault(); filterCategory('partywear')">Partywear</a>
+        <a href="#" class="nav-link" onclick="event.preventDefault(); filterCategory('casual')">Casual Wear</a>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Premium Hero -->
   <section class="hero">
     <div class="container">
-      <div class="hero-content">
-        <h1>Premium Wedding & Occasion Wear on Rent in Ahmedabad</h1>
-        <p class="hero-subtitle">Lehengas, Sherwanis & Partywear — Look Royal. Rent Smart.</p>
-        <div class="hero-cta">
-          <a href="https://wa.me/919876543210?text=Hi%20FitMate!%20I%27m%20interested%20in%20renting%20wedding%20wear"
-            class="btn btn-primary btn-lg" onclick="trackWhatsAppClick('hero')">
-            📱 Book on WhatsApp
-          </a>
-          <a href="#categories" class="btn btn-secondary btn-lg">Browse Collection</a>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Rental for Every Occasion</h1>
+          <p>Discover designer fashion at a fraction of the cost. Rent what you love, list what you own, and
+            join India's most trusted fashion community.</p>
+          <div class="hero-buttons">
+            <button class="btn-hero-large" onclick="scrollToProducts()">
+              Explore Collection
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button class="btn-hero-outline" onclick="showListingForm()">List Your Wardrobe</button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Rent Section -->
-  <section class="section" id="why-rent">
+  <!-- Cinematic Video Section -->
+  <section class="video-section"
+    style="position: relative; height: 70vh; overflow: hidden; display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
+    <video autoplay muted loop playsinline
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; filter: brightness(0.6);">
+      <source src="https://videos.pexels.com/video-files/3205803/3205803-uhd_2560_1440_25fps.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="container" style="position: relative; z-index: 2;">
+      <h2 style="font-size: 4rem; margin-bottom: 1.5rem; font-family: 'Playfair Display', serif;">The Elite
+        Collection</h2>
+      <p
+        style="font-size: 1.25rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9;">
+        Cinematic elegance meets modern luxury. Discover the new face of fashion rental.
+      </p>
+      <button onclick="scrollToProducts()"
+        style="padding: 1rem 3rem; font-size: 1.1rem; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.5); color: white; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 2px;">
+        View Collection
+      </button>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <section class="catalog-section" id="products">
     <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Smart Choice</p>
-        <h2 class="section-title">Why Rent with FitMate?</h2>
-        <p class="section-description">Experience luxury without the commitment. Premium quality, perfect fit,
-          stress-free returns.</p>
+      <div class="catalog-header">
+        <div>
+          <h2 class="catalog-title">Browse Our Catalog</h2>
+          <p class="catalog-subtitle">Curated collection of premium fashion</p>
+        </div>
+        <div class="catalog-controls">
+          <select class="filter-select" id="sortSelect" onchange="handleSort()">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="newest">Newest</option>
+          </select>
+          <select class="filter-select" id="locationFilter" onchange="handleFilterChange()">
+            <option value="all">All Locations</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+          </select>
+        </div>
       </div>
 
-      <div class="grid grid-4">
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h3>Save 70–80% vs Buying</h3>
-          <p>Why spend lakhs when you can rent premium designer wear for a fraction of the cost? Invest smart, look
-            royal.</p>
-        </div>
+      <div class="products-grid" id="productsGrid">
+        <!-- Products loaded dynamically -->
+      </div>
 
-        <div class="card">
-          <div class="card-icon">✨</div>
-          <h3>Perfect Fit & Hygiene</h3>
-          <p>Every outfit is professionally cleaned, steam-ironed, and quality-checked. We ensure perfect fit with size
-            consultations.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">🔄</div>
-          <h3>Worn Once, Returned Stress-Free</h3>
-          <p>Wear it, flaunt it, return it. No storage hassles, no maintenance worries. Just pure joy on your special
-            day.</p>
-        </div>
-
-        <div class="card">
-          <div class="card-icon">👫</div>
-          <h3>Men & Women Collections</h3>
-          <p>From bridal lehengas to groom sherwanis, from party sarees to Indo-western suits — we have it all.</p>
-        </div>
+      <div class="load-more-section" id="loadMoreSection" style="display: none;">
+        <button class="btn-load-more" onclick="loadMoreProducts()">Load More</button>
       </div>
     </div>
   </section>
 
-  <!-- Categories Section -->
-  <section class="section section-lg" id="categories">
+  <!-- Trust Badges -->
+  <section class="trust-section">
     <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Our Collections</p>
-        <h2 class="section-title">Explore Premium Categories</h2>
-        <p class="section-description">Curated collections for every celebration. From weddings to sangeet, from
-          engagement to reception.</p>
-      </div>
-
-      <div class="grid grid-4">
-        <a href="lehenga-on-rent-ahmedabad.html" class="category-card">
-          <img
-            src="C:/Users/Administrator/.gemini/antigravity/brain/89e228ad-f2cc-4ea2-85a1-2612accd9d0e/lehenga_luxury_1767293348182.png"
-            alt="Lehenga on Rent in Ahmedabad" class="category-card-image">
-          <div class="category-card-content">
-            <h3>Lehengas on Rent</h3>
-            <span class="category-card-link">Explore Collection →</span>
-          </div>
-        </a>
-
-        <a href="sherwani-on-rent-ahmedabad.html" class="category-card">
-          <img
-            src="C:/Users/Administrator/.gemini/antigravity/brain/89e228ad-f2cc-4ea2-85a1-2612accd9d0e/sherwani_premium_1767293366548.png"
-            alt="Sherwani on Rent in Ahmedabad" class="category-card-image">
-          <div class="category-card-content">
-            <h3>Sherwanis on Rent</h3>
-            <span class="category-card-link">Explore Collection →</span>
-          </div>
-        </a>
-
-        <a href="partywear-on-rent-ahmedabad.html" class="category-card">
-          <div class="category-card-image" style="background: linear-gradient(135deg, #F5E6D3 0%, #E8D4B8 100%);"></div>
-          <div class="category-card-content">
-            <h3>Partywear on Rent</h3>
-            <span class="category-card-link">Explore Collection →</span>
-          </div>
-        </a>
-
-        <a href="partywear-on-rent-ahmedabad.html" class="category-card">
-          <div class="category-card-image" style="background: linear-gradient(135deg, #D4E8D8 0%, #B8D4C8 100%);"></div>
-          <div class="category-card-content">
-            <h3>Festive Wear</h3>
-            <span class="category-card-link">Explore Collection →</span>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="section" style="background-color: var(--color-bg-secondary);">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Simple Process</p>
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-description">Renting luxury wear has never been easier. Just three simple steps to your
-          perfect outfit.</p>
-      </div>
-
-      <div class="grid grid-3 steps">
-        <div class="step">
-          <div class="step-number">1</div>
-          <h3>Choose Your Outfit</h3>
-          <p>Browse our premium collection online or visit our Ahmedabad showroom. Pick your favorite design and style.
-          </p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">2</div>
-          <h3>Try & Confirm Size</h3>
-          <p>Book a trial appointment. Our experts help you find the perfect fit. We make alterations if needed.</p>
-        </div>
-
-        <div class="step">
-          <div class="step-number">3</div>
-          <h3>Wear & Return</h3>
-          <p>Collect your outfit 2 days before the event. Wear it, shine bright, and return it within 24 hours after the
-            event.</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-xl">
-        <a href="https://wa.me/919876543210?text=Hi%20FitMate!%20I%20want%20to%20know%20more%20about%20the%20rental%20process"
-          class="btn btn-primary btn-lg" onclick="trackWhatsAppClick('how-it-works')">
-          Get Started on WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust Section -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Your Peace of Mind</p>
-        <h2 class="section-title">Why Customers Trust FitMate</h2>
-      </div>
-
       <div class="trust-grid">
-        <div class="grid grid-2">
-          <div class="trust-item">
-            <div class="trust-icon">🛡️</div>
-            <div class="trust-content">
-              <h4>Hygiene Guarantee</h4>
-              <p>Every outfit is dry-cleaned, sanitized, and steam-ironed using premium eco-friendly products. We
-                maintain the highest hygiene standards.</p>
-            </div>
+        <div class="trust-item">
+          <div class="trust-icon">🔒</div>
+          <div>
+            <h3>Secure Payments</h3>
+            <p>100% safe transactions</p>
           </div>
-
-          <div class="trust-item">
-            <div class="trust-icon">📋</div>
-            <div class="trust-content">
-              <h4>Transparent Damage Policy</h4>
-              <p>Clear terms, no hidden charges. Minor wear & tear is expected. We only charge for significant damage.
-                Your security deposit is always protected.</p>
-            </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">✓</div>
+          <div>
+            <h3>Verified Sellers</h3>
+            <p>Every seller is verified</p>
           </div>
-
-          <div class="trust-item">
-            <div class="trust-icon">💬</div>
-            <div class="trust-content">
-              <h4>WhatsApp Support</h4>
-              <p>Got questions? Need assistance? Our team is just a message away on WhatsApp. Fast responses, friendly
-                service, always ready to help.</p>
-            </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">⭐</div>
+          <div>
+            <h3>Quality Guaranteed</h3>
+            <p>Premium products only</p>
           </div>
-
-          <div class="trust-item">
-            <div class="trust-icon">📍</div>
-            <div class="trust-content">
-              <h4>Local Ahmedabad Presence</h4>
-              <p>We're not an app-only service. Visit our physical showroom, try outfits in person, and build trust.
-                Real people, real service.</p>
-            </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-icon">💬</div>
+          <div>
+            <h3>24/7 Support</h3>
+            <p>We're here to help</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEO Content Block -->
-  <section class="section">
-    <div class="container">
-      <div class="seo-content">
-        <h2>Premium Lehenga & Sherwani Rentals in Ahmedabad</h2>
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal-overlay" style="display: none;" onclick="handleModalOverlayClick(event)">
+    <div class="modal-product">
+      <button class="modal-close-btn" onclick="closeProductModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
 
-        <p>Welcome to <strong>FitMate Rentals</strong>, Ahmedabad's most trusted destination for premium wedding and
-          occasion wear rentals. We understand that your special day deserves nothing but the best, and that's exactly
-          what we deliver — royal outfits without the royal price tag.</p>
+      <div class="modal-grid">
+        <div class="modal-image-section">
+          <img id="modalImage" src="" alt="" class="modal-product-image">
+        </div>
 
-        <h3>Why Choose Rental Over Purchase?</h3>
-        <p>Indian weddings are grand celebrations, but the cost of designer outfits can be overwhelming. A premium
-          <strong>bridal lehenga</strong> can cost anywhere from ₹50,000 to ₹5 lakhs, and you'll likely wear it just
-          once. Similarly, groom <strong>sherwanis</strong> and designer suits come with hefty price tags. FitMate
-          Rentals offers a smarter solution — rent luxury wear at 70-80% lower cost than buying, without compromising on
-          quality or style.</p>
+        <div class="modal-info-section">
+          <div class="modal-breadcrumb" id="modalBreadcrumb"></div>
+          <h1 class="modal-title" id="modalTitle"></h1>
+          <div class="modal-rating" id="modalRating"></div>
 
-        <h3>Our Collections in Ahmedabad</h3>
-        <p>We specialize in curating the finest collection of <strong>lehengas on rent in Ahmedabad</strong>, featuring
-          everything from traditional red bridal lehengas to contemporary pastel designs. Our <strong>sherwani
-            collection</strong> includes classic ivory and gold pieces, modern Indo-western styles, and regal Rajasthani
-          designs. For engagement parties, sangeet ceremonies, and reception events, explore our exclusive
-          <strong>partywear and festive wear</strong> sections.</p>
+          <div class="pricing-cards">
+            <div class="price-card price-card-rent">
+              <div class="price-card-header">
+                <span class="price-card-label">Rent</span>
+                <span class="price-card-badge">Recommended</span>
+              </div>
+              <div class="price-card-amount" id="modalRentPrice"></div>
+              <div class="price-card-period">per day</div>
+              <button class="btn-price-card btn-rent" onclick="handleRent()">Rent Now</button>
+            </div>
 
-        <h3>Hygiene & Quality Standards</h3>
-        <p>At FitMate, hygiene is non-negotiable. Every outfit goes through a rigorous 5-step cleaning process — dry
-          cleaning with premium solutions, sanitization, steam ironing, quality inspection, and protective packaging. We
-          understand the concerns around renting clothes, which is why we've invested in hospital-grade sanitization
-          equipment to ensure every piece you receive is fresh, clean, and ready to make you shine.</p>
+            <div class="price-card">
+              <div class="price-card-header">
+                <span class="price-card-label">Buy</span>
+              </div>
+              <div class="price-card-amount" id="modalBuyPrice"></div>
+              <div class="price-card-strike" id="modalStrikePrice"></div>
+              <button class="btn-price-card btn-buy" onclick="handleBuy()">Buy Now</button>
+            </div>
+          </div>
 
-        <h3>Perfect Fit Guaranteed</h3>
-        <p>Worried about sizing? Don't be. Our experienced team offers personalized size consultations, trial
-          appointments, and minor alterations if needed. We believe that a perfect fit is essential to looking your
-          best, and we go the extra mile to ensure you feel confident and comfortable.</p>
+          <div class="product-info-section">
+            <h3>Product Details</h3>
+            <p id="modalDescription"></p>
+            <div class="detail-grid">
+              <div class="detail-item">
+                <span class="detail-label">Location</span>
+                <span class="detail-value" id="modalLocation"></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">Category</span>
+                <span class="detail-value" id="modalCategory"></span>
+              </div>
+            </div>
+          </div>
 
-        <h3>Serving Ahmedabad with Pride</h3>
-        <p>As a locally-rooted business in Ahmedabad, we understand the cultural nuances and preferences of our city.
-          Whether you're looking for a <strong>lehenga for a Gujarati wedding</strong>, a <strong>sherwani for a
-            Rajasthani ceremony</strong>, or Indo-western fusion wear for a modern celebration, we have options that
-          resonate with your style and tradition. Our showroom is conveniently located to serve customers across
-          Satellite, Prahlad Nagar, Bodakdev, Vastrapur, and other prime areas of Ahmedabad.</p>
-
-        <h3>Book Your Outfit Today</h3>
-        <p>Ready to look royal without spending a fortune? Browse our collection online, visit our Ahmedabad showroom,
-          or simply message us on WhatsApp. Our friendly team will guide you through the entire process — from selection
-          to fitting to delivery and return. Make your special day memorable with FitMate Rentals.</p>
+          <div class="seller-section">
+            <h3>Seller Information</h3>
+            <div class="seller-card-modal">
+              <div class="seller-avatar-large" id="modalSellerAvatar"></div>
+              <div class="seller-info-modal">
+                <div class="seller-name-large" id="modalSellerName"></div>
+                <div class="seller-rating-modal" id="modalSellerRating"></div>
+                <div class="seller-badge">✓ Verified Seller</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Rent to Earn Section -->
-  <section class="section" id="rent-to-earn"
-    style="background: linear-gradient(rgba(201, 169, 97, 0.1), rgba(201, 169, 97, 0.05));">
-    <div class="container">
-      <div class="grid grid-2 align-center">
-        <div class="promo-image">
-          <div
-            style="background: var(--color-accent-gold-light); height: 400px; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-size: 5rem;">
-            💰</div>
+  <!-- Auth Modals -->
+  <div id="authModal" class="modal-overlay" style="display: none;" onclick="handleModalOverlayClick(event)">
+    <div class="modal-auth">
+      <button class="modal-close-btn" onclick="closeAllModals()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div id="authContent"></div>
+    </div>
+  </div>
+
+  <!-- Listing Form Modal -->
+  <div id="listingModal" class="modal-overlay" style="display: none;" onclick="handleModalOverlayClick(event)">
+    <div class="modal-listing">
+      <button class="modal-close-btn" onclick="closeAllModals()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <h2>List Your Item</h2>
+      <form class="listing-form" onsubmit="handleSubmitListing(event)">
+        <div class="form-group">
+          <label>Item Title *</label>
+          <input type="text" placeholder="e.g., Red Bridal Lehenga with Gold Work" required>
         </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Category *</label>
+            <select required>
+              <option value="">Select Category</option>
+              <option value="lehenga">Lehenga</option>
+              <option value="sherwani">Sherwani</option>
+              <option value="saree">Saree</option>
+              <option value="suit">Suit/Blazer</option>
+              <option value="partywear">Partywear</option>
+              <option value="casual">Casual Wear</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Location *</label>
+            <select required>
+              <option value="">Select City</option>
+              <option value="Mumbai">Mumbai</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Bangalore">Bangalore</option>
+              <option value="Ahmedabad">Ahmedabad</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Rent Price (per day) *</label>
+            <input type="number" placeholder="₹2500" min="100" required>
+          </div>
+
+          <div class="form-group">
+            <label>Buy Price</label>
+            <input type="number" placeholder="₹25000" min="1000">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Description *</label>
+          <textarea rows="4" placeholder="Describe your item, size, condition, occasion..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit-listing">Submit for Review</button>
+        <p class="form-note">Your listing will be reviewed and published within 24 hours</p>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Rent to Earn Promotion (Elite Style) -->
+  <section class="section-elite" style="background-color: var(--bg-light); padding: 100px 0;">
+    <div class="container">
+      <div class="promo-grid-elite">
         <div class="promo-content">
-          <p class="section-subtitle">Promote & Earn</p>
-          <h2 class="section-title">Rent to Earn with FitMate</h2>
-          <p class="section-description">Have premium outfits sitting in your closet? Turn them into a source of income.
-            List your designer lehengas, sherwanis, and gowns on FitMate and start earning today.</p>
-          <ul class="benefit-list mb-xl">
-            <li>✅ **Safe & Secure**: We handle hygiene and security.</li>
-            <li>✅ **Expert Maintenance**: Professional cleaning after every use.</li>
-            <li>✅ **Regular Income**: Earn every time someone rents your outfit.</li>
+          <span class="promo-subtitle">Warderobe Monetization</span>
+          <h2 class="promo-title">Rent Your Outfits,<br>Earn Effortlessly</h2>
+          <p class="promo-description">Turn your designer wear into a source of income. Join thousands of
+            verified lenders across India.</p>
+
+          <ul class="benefit-list-elite">
+            <li>
+              <span class="benefit-icon-elite">💰</span>
+              <div>
+                <strong>High ROI</strong>
+                <p>Recover cost in 5-7 rentals</p>
+              </div>
+            </li>
+            <li>
+              <span class="benefit-icon-elite">🛡️</span>
+              <div>
+                <strong>Secure Protection</strong>
+                <p>We handle security and logistics</p>
+              </div>
+            </li>
           </ul>
-          <a href="list-your-outfit.html" class="btn btn-primary btn-lg">List Your Outfit Now</a>
+
+          <button class="btn-hero-large" onclick="window.location.href='list-your-outfit.html'">
+            List Your Outfit Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class="promo-visual-elite">
+          <div class="earnings-card-elite">
+            <div class="earnings-label">Potential Monthly Earnings</div>
+            <div class="earnings-amount">₹35,000 - ₹85,000</div>
+            <div class="earnings-bar">
+              <div class="earnings-progress"></div>
+            </div>
+            <div class="earnings-note">Based on premium lehengas & sherwanis</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="section" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-subtitle">Common Questions</p>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-description">Everything you need to know about renting premium wear from FitMate.</p>
+  <!-- FAQ Section (Elite Style) -->
+  <section class="section-elite" style="padding: 100px 0;">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header-center">
+        <h2 class="catalog-title text-center" style="margin-bottom: 48px;">Frequently Asked Questions</h2>
       </div>
 
       <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question">
-            How do I know if an outfit will fit me?
-            <span class="faq-icon">▼</span>
+        <div class="faq-item-elite">
+          <button class="faq-question-elite">
+            How does the rental process work?
+            <span class="faq-icon">⊕</span>
           </button>
-          <div class="faq-answer">
-            <p>We offer trial appointments at our Ahmedabad showroom. Our experts help you find the perfect fit and we
-              provide minor alterations for free to ensure you look your best.</p>
+          <div class="faq-answer-elite">
+            <p>Browse the collection, select your dates, and book. We'll deliver the outfit professionally
+              cleaned and sanitized. After your event, we'll pick it up—no cleaning required from your
+              side.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            What if I accidentally damage the outfit?
-            <span class="faq-icon">▼</span>
+        <div class="faq-item-elite">
+          <button class="faq-question-elite">
+            What if the outfit doesn't fit?
+            <span class="faq-icon">⊕</span>
           </button>
-          <div class="faq-answer">
-            <p>Normal wear and tear (minor creases, light makeup) is expected and free. For other damages, we have a
-              transparent <a href="damage-refund-policy.html">Damage Policy</a>. We only charge for significant repairs
-              or replacement.</p>
+          <div class="faq-answer-elite">
+            <p>We provide detailed size guides and offer a "Fits or Refund" guarantee. If an item doesn't
+              fit as expected, we prioritize an immediate swap or full refund.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            How long can I keep the rented outfit?
-            <span class="faq-icon">▼</span>
+        <div class="faq-item-elite">
+          <button class="faq-question-elite">
+            How do I earn from my wardrobe?
+            <span class="faq-icon">⊕</span>
           </button>
-          <div class="faq-answer">
-            <p>Our standard rental period is 3 days. You typically collect the outfit 2 days before your event and
-              return it 1 day after. Extended rentals are available on request.</p>
+          <div class="faq-answer-elite">
+            <p>Simply list your item through our "List Your Outfit" portal. Once verified, we handle the
+              photography (if requested), logistics, and payments while you earn on every rental.</p>
           </div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-question">
-            Is the security deposit refundable?
-            <span class="faq-icon">▼</span>
+        <div class="faq-item-elite">
+          <button class="faq-question-elite">
+            What is your damage policy?
+            <span class="faq-icon">⊕</span>
           </button>
-          <div class="faq-answer">
-            <p>Yes, the security deposit is 100% refundable. It is returned within 5-7 business days once the outfit is
-              returned to us in good condition.</p>
+          <div class="faq-answer-elite">
+            <p>We have a transparent damage policy that protects both lenders and borrowers. Minor wear and
+              tear is expected, while significant damage is covered by security deposits. View our full <a
+                href="damage-refund-policy.html" style="color: var(--primary); font-weight: 600;">Damage &
+                Refund Policy</a> for details.</p>
+          </div>
+        </div>
+
+        <div class="faq-item-elite">
+          <button class="faq-question-elite">
+            Is there a security deposit?
+            <span class="faq-icon">⊕</span>
+          </button>
+          <div class="faq-answer-elite">
+            <p>Yes, all rentals require a security deposit which is 100% refundable upon the safe return of
+              the item. Deposits are typically returned within 3-5 business days after quality check.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Final CTA -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Ready to Look Royal?</h2>
-      <p>Book your perfect outfit today. Our team is ready to help you shine.</p>
-      <a href="https://wa.me/919876543210?text=Hi%20FitMate!%20I%20want%20to%20book%20an%20outfit"
-        class="btn btn-primary btn-lg" onclick="trackWhatsAppClick('final-cta')"
-        style="background-color: var(--color-white); color: var(--color-text-primary);">
-        📱 Book Now on WhatsApp
-      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-content">
-        <div class="footer-about">
-          <div class="footer-logo">Fit<span class="logo-accent">Mate</span></div>
-          <p class="footer-description">Ahmedabad's premium clothing rental service. Look royal, rent smart. Serving
-            brides, grooms, and families with the finest wedding and occasion wear.</p>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <img src="logo.jpg" alt="FitMate" class="footer-logo">
+          <p>India's premier peer-to-peer fashion marketplace</p>
         </div>
-
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="rental-policy.html">Rental Policy</a></li>
-            <li><a href="damage-refund-policy.html">Damage Policy</a></li>
-          </ul>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About Us</a>
+          <a href="#">How It Works</a>
+          <a href="#">Contact</a>
         </div>
-
-        <div class="footer-section">
-          <h4>Collections</h4>
-          <ul class="footer-links">
-            <li><a href="lehenga-on-rent-ahmedabad.html">Lehengas</a></li>
-            <li><a href="sherwani-on-rent-ahmedabad.html">Sherwanis</a></li>
-            <li><a href="partywear-on-rent-ahmedabad.html">Partywear</a></li>
-            <li><a href="clothing-rentals-ahmedabad.html">All Rentals</a></li>
-          </ul>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="damage-refund-policy.html">Damage & Refund Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
         </div>
-
-        <div class="footer-section">
-          <h4>Contact</h4>
-          <ul class="footer-links">
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="https://wa.me/919876543210">WhatsApp</a></li>
-            <li>Ahmedabad, Gujarat</li>
-          </ul>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
         </div>
       </div>
-
       <div class="footer-bottom">
-        <p>&copy; 2026 FitMate Rentals. All rights reserved. | Premium Wedding & Occasion Wear on Rent in Ahmedabad</p>
+        <p>&copy; 2026 FitMate. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Sticky WhatsApp Button -->
-  <a href="https://wa.me/919876543210?text=Hi%20FitMate!%20I%20have%20a%20question" class="whatsapp-sticky"
-    onclick="trackWhatsAppClick('sticky')">
-    <span class="whatsapp-icon">💬</span>
-    <span class="whatsapp-text">Book on WhatsApp</span>
-  </a>
-
-  <!-- Scripts -->
-  <script src="components.js"></script>
-
+  <script src="elite-app.js"></script>
 </body>
 
 </html>
