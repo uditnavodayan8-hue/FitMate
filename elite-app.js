@@ -343,23 +343,14 @@ function renderProducts() {
         <div class="product-brand">${product.category.toUpperCase()}</div>
         <div class="product-title">${product.title}</div>
         
-        <div class="availability-check-elite" onclick="event.stopPropagation()">
-            <div class="elite-date-inputs">
-                <input type="date" id="startDate-${product.id}" class="elite-date-input" title="Start Date">
-                <input type="date" id="endDate-${product.id}" class="elite-date-input" title="End Date">
-            </div>
-            <button class="btn-check-availability-elite" onclick="handleEliteAvailability(${product.id})">Check Availability</button>
-        </div>
-
         <div class="product-price">
           <span class="price-rent">₹${product.rentPrice.toLocaleString()}</span>
-          <div style="display: flex; flex-direction: column; align-items: flex-end;">
-            <span class="price-buy">Buy: ₹${product.buyPrice.toLocaleString()}</span>
-            <span style="font-size: 10px; text-decoration: line-through; color: #999;">₹${product.originalPrice.toLocaleString()}</span>
-          </div>
+          <span class="price-divider">|</span>
+          <span class="price-buy">Buy ₹${product.buyPrice.toLocaleString()}</span>
         </div>
       </div>
     `;
+
 
         grid.appendChild(card);
     });
