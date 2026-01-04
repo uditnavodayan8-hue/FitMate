@@ -2018,7 +2018,7 @@ h3,
 
 @media (max-width: 1200px) {
     .display-serif {
-        font-size: 4rem;
+        font-size: clamp(3rem, 8vw, 5.5rem);
     }
 
     .magazine-grid {
@@ -2063,10 +2063,6 @@ h3,
         max-width: 400px;
     }
 
-    .display-serif {
-        font-size: 3rem;
-    }
-
     .hero-lead {
         font-size: 1.1rem;
     }
@@ -2095,7 +2091,7 @@ h3,
     }
 
     .serif-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .hero-cta-group {
@@ -2110,18 +2106,96 @@ h3,
         padding: 14px 24px;
         text-align: center;
     }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 }
 
 @media (max-width: 480px) {
-    .display-serif {
-        font-size: 2.2rem;
-    }
-
     .luxury-logo {
-        height: 45px;
+        height: 40px;
     }
 
     .section-magazine-header {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
+
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mag-item.large,
+    .mag-item-column .mag-item {
+        height: 300px;
+    }
+}
+
+/* --- ANIMATED LUXURY PLACEHOLDERS --- */
+
+.luxury-placeholder-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.luxury-placeholder-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: luxuryFade 15s infinite;
+}
+
+.luxury-placeholder-slider img:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.luxury-placeholder-slider img:nth-child(3) {
+    animation-delay: 10s;
+}
+
+@keyframes luxuryFade {
+    0% {
+        opacity: 0;
+        transform: scale(1.05);
+    }
+
+    5% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    33% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    38% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.placeholder-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 4px 10px;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    z-index: 5;
 }

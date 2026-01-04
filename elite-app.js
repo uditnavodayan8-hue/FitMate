@@ -301,31 +301,42 @@ function renderProducts() {
         card.className = 'product-card';
         card.onclick = () => openProductDetail(product.id);
 
-        const images = product.images || [product.image];
-        const hasMultipleImages = images.length > 1;
+        const images = product.images || (product.image ? [product.image] : null);
+        const hasSpecificImages = images && images.length > 0 && !images[0].includes('placeholder');
 
         let sliderHtml = '';
         let dotsHtml = '';
 
-        if (hasMultipleImages) {
-            // Slider Images
+        if (hasSpecificImages) {
+            const hasMultipleImages = images.length > 1;
+            // Existing Slider Logic
             sliderHtml = images.map((img, index) =>
                 `<img src="${img}" alt="${product.title} - View ${index + 1}" loading="lazy">`
             ).join('');
 
-            // Slider Dots
-            dotsHtml = `
+            dotsHtml = hasMultipleImages ? `
                 <div class="slider-dots">
                     ${images.map((_, index) =>
                 `<div class="slider-dot ${index === 0 ? 'active' : ''}" data-index="${index}"></div>`
             ).join('')}
                 </div>
-            `;
+            ` : '';
         } else {
-            sliderHtml = `<img src="${product.image}" alt="${product.title}" loading="lazy">`;
+            // Animated Luxury Placeholder (Dishita Model)
+            const dishitaImages = [
+                'images/bridal_lehenga_1_7450373024.png',
+                'images/bridal_lehenga_2_7450373024.png',
+                'images/bridal_lehenga_3_7450373024.png'
+            ];
+            sliderHtml = `
+                <div class="luxury-placeholder-slider">
+                    <span class="placeholder-badge">Exclusive Preview</span>
+                    ${dishitaImages.map(img => `<img src="${img}" alt="Luxury Collection Preview">`).join('')}
+                </div>
+            `;
         }
 
-        const navButtons = hasMultipleImages ? `
+        const navButtons = (hasSpecificImages && images.length > 1) ? `
             <button class="slider-btn slider-btn-prev" onclick="event.stopPropagation(); moveSlider(${product.id}, -1)">&#10094;</button>
             <button class="slider-btn slider-btn-next" onclick="event.stopPropagation(); moveSlider(${product.id}, 1)">&#10095;</button>
         ` : '';
@@ -338,6 +349,7 @@ function renderProducts() {
         ${dotsHtml}
         ${navButtons}
       </div>
+
       
       <div class="product-info">
         <div class="product-brand">${product.category.toUpperCase()}</div>
