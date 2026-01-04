@@ -322,11 +322,14 @@ function renderProducts() {
                 </div>
             ` : '';
         } else {
-            // Animated Luxury Placeholder (Dishita Model) - Using actually existing files
+            // Animated Luxury Placeholder (Dishita Model) - Using new Elite assets
             const dishitaImages = [
-                'images/lehenga_premium_red_1767449705240.png',
-                'images/lehenga_red.png',
-                'images/gold_lehenga_1.png'
+                'images/dishita_pink_front.png',
+                'images/dishita_red_front.png',
+                'images/dishita_emerald_front.png',
+                'images/dishita_pink_twirl.png',
+                'images/dishita_red_side.png',
+                'images/dishita_emerald_side.png'
             ];
             sliderHtml = `
                 <div class="luxury-placeholder-slider">
