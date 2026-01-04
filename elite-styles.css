@@ -2620,6 +2620,35 @@ h3,
         padding: 20px;
     }
 
+    /* Listing Form & Policy Mobile */
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .form-container-elite,
+    .policy-card-elite {
+        padding: 24px;
+        margin-bottom: 24px;
+    }
+
+    .elite-upload-area {
+        padding: 30px 15px;
+    }
+
+    .table-responsive-elite {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .elite-table {
+        min-width: 500px;
+        /* Force scroll for small screens */
+    }
+
+    /* FAQ Mobile */
     .faq-answer-elite {
         padding: 20px;
     }
