@@ -365,6 +365,128 @@ h3,
     background: rgba(255, 255, 255, 0.05);
 }
 
+/* Forbes Editorial Hero */
+.editorial-forbes {
+    position: relative;
+    padding: 160px 0 120px;
+    background: var(--bg-light);
+    overflow: hidden;
+}
+
+.forbes-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.forbes-content-elite {
+    position: relative;
+    z-index: 2;
+}
+
+.forbes-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--primary);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 30px;
+}
+
+.forbes-quote-serif {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    color: var(--primary);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.forbes-quote-serif::before {
+    content: '"';
+    position: absolute;
+    left: -40px;
+    top: -20px;
+    font-size: 8rem;
+    color: var(--accent);
+    opacity: 0.2;
+}
+
+.forbes-metadata {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+}
+
+.metadata-item-elite h4 {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.metadata-item-elite p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.forbes-image-wrapper {
+    position: relative;
+}
+
+.forbes-image-main {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    box-shadow: var(--shadow-xl);
+    border: 15px solid white;
+}
+
+.forbes-caption-box {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: white;
+    padding: 30px;
+    box-shadow: var(--shadow-lg);
+    max-width: 250px;
+}
+
+.forbes-caption-box strong {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.forbes-caption-box p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .forbes-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .forbes-quote-serif {
+        font-size: 3.5rem;
+    }
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
