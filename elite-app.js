@@ -3,6 +3,48 @@
 // Product Catalog - Enhanced with Multi-Image Support
 const productCatalog = [
     {
+        id: 903, // Exclusive
+        title: 'FitMate Exclusive: Millennial Pink Crystal Lehenga',
+        category: 'lehenga',
+        rentPrice: 5500,
+        buyPrice: 95000,
+        originalPrice: 140000,
+        location: 'Mumbai (Elite)',
+        owner: 'FitMate Elite Collection',
+        rating: 5.0,
+        description: 'A Zara-grade editorial masterpiece. Soft luxury pink silk with intricate silver crystal embroidery. Features a modern, lightweight drape perfect for the contemporary bride or bridesmaid.',
+        image: 'images/dishita_pink_front.png',
+        images: ['images/dishita_pink_front.png', 'images/dishita_pink_twirl.png', 'images/dishita_pink_detail.png']
+    },
+    {
+        id: 902, // Exclusive
+        title: 'FitMate Exclusive: Heritage Emerald Green Silk Saree',
+        category: 'saree',
+        rentPrice: 4200,
+        buyPrice: 75000,
+        originalPrice: 110000,
+        location: 'Mumbai (Elite)',
+        owner: 'FitMate Elite Collection',
+        rating: 5.0,
+        description: 'Timeless emerald green pure silk saree with a minimalist gold border. Paired with authentic Kundan jewelry styling. A symbol of quiet luxury and traditional elegance.',
+        image: 'images/dishita_emerald_front.png',
+        images: ['images/dishita_emerald_front.png', 'images/dishita_emerald_side.png', 'images/dishita_emerald_detail.png']
+    },
+    {
+        id: 901, // Exclusive
+        title: 'FitMate Exclusive: Ruby Red Bridal Leisure Lehenga',
+        category: 'lehenga',
+        rentPrice: 6500,
+        buyPrice: 125000,
+        originalPrice: 180000,
+        location: 'Delhi (Elite)',
+        owner: 'FitMate Elite Collection',
+        rating: 5.0,
+        description: 'The definitive bridal look. Deep ruby red velvet with heavy gold Zardozi hand-embroidery. Captures the essence of Indian royalty with a modern, youthful silhouette.',
+        image: 'images/dishita_red_front.png',
+        images: ['images/dishita_red_front.png', 'images/dishita_red_side.png', 'images/dishita_red_detail.png']
+    },
+    {
         id: 1,
         title: 'Red Bridal Lehenga with Gold Zardozi Embroidery',
         category: 'lehenga',

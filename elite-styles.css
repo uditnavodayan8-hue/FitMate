@@ -2490,13 +2490,31 @@ h3,
     }
 
     .magazine-grid {
-        grid-template-columns: 1fr;
-        height: auto;
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding-bottom: 20px;
+        scroll-padding: 0 16px;
+    }
+
+    .magazine-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .mag-item.large {
+        min-width: 85vw;
+        scroll-snap-align: center;
+        flex-shrink: 0;
     }
 
     .mag-item-column {
-        grid-template-rows: auto;
-        gap: 20px;
+        min-width: 85vw;
+        scroll-snap-align: center;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     .mag-item.large {
@@ -2549,12 +2567,17 @@ h3,
     }
 
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        padding: 0 4px;
+    }
+
+    .product-card {
+        margin-bottom: 0;
     }
 
     .product-image {
-        height: 450px;
+        height: 240px;
     }
 
     /* Trust Section Mobile */
@@ -2670,7 +2693,7 @@ h3,
     }
 
     .product-image {
-        height: 380px;
+        height: 220px;
     }
 
     .promo-title {
