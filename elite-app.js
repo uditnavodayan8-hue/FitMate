@@ -322,11 +322,11 @@ function renderProducts() {
                 </div>
             ` : '';
         } else {
-            // Animated Luxury Placeholder (Dishita Model)
+            // Animated Luxury Placeholder (Dishita Model) - Using actually existing files
             const dishitaImages = [
-                'images/bridal_lehenga_1_7450373024.png',
-                'images/bridal_lehenga_2_7450373024.png',
-                'images/bridal_lehenga_3_7450373024.png'
+                'images/lehenga_premium_red_1767449705240.png',
+                'images/lehenga_red.png',
+                'images/gold_lehenga_1.png'
             ];
             sliderHtml = `
                 <div class="luxury-placeholder-slider">
@@ -335,6 +335,7 @@ function renderProducts() {
                 </div>
             `;
         }
+
 
         const navButtons = (hasSpecificImages && images.length > 1) ? `
             <button class="slider-btn slider-btn-prev" onclick="event.stopPropagation(); moveSlider(${product.id}, -1)">&#10094;</button>
