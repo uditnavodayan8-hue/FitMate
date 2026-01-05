@@ -764,14 +764,27 @@ h3,
     opacity: 0.6;
 }
 
-.luxury-logo {
-    height: 32px;
-    /* Professional RTR scale */
-    width: auto;
-    object-fit: contain;
-    mix-blend-mode: normal;
-    /* No blending needed on white bg */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #1A1A1A;
+    cursor: pointer;
+    text-transform: uppercase;
 }
+
+.logo-text-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+/* Deprecated Image Logo rules removed */
 
 .header-right {
     display: flex;
@@ -2934,6 +2947,27 @@ h3,
    SABYASACHI-INSPIRED REDESIGN (Immersive)
    ========================================= */
 
+/* Add text logo styles to replace image logo */
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #1A1A1A;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.logo-text-footer {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #1A1A1A;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
 /* Immersive Hero Section */
 .hero-immersive-split {
     display: grid;
@@ -3101,6 +3135,93 @@ h3,
     opacity: 0.9;
 }
 
+/* RTR Editorial Hero (Desktop) */
+.hero-immersive-split {
+    display: flex;
+    height: 85vh;
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.hero-text-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 80px;
+    animation: fadeInScale 1s ease-out;
+}
+
+.hero-image-side {
+    width: 50%;
+    height: 100%;
+    display: block;
+    position: relative;
+}
+
+.hero-img-immersive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+.hero-brand-badge {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    color: var(--primary);
+    margin-bottom: 32px;
+    text-transform: uppercase;
+}
+
+.hero-title-royal {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.1;
+    color: #1A1A1A;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.hero-subtitle-royal {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 48px;
+    max-width: 500px;
+}
+
+.btn-royal-cta {
+    background: #1A1A1A;
+    color: white;
+    padding: 16px 48px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+}
+
+.btn-royal-cta:hover {
+    background: #444;
+    transform: translateY(-2px);
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* =========================================
    MOBILE RESPONSIVENESS (IMPACT)
    ========================================= */
@@ -3121,82 +3242,65 @@ h3,
 
 @media (max-width: 768px) {
 
-    /* RTR Editorial Hero */
+    /* Hero: Mobile Stack - Image First */
     .hero-immersive-split {
-        display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 80vh;
-        background: #FFFFFF;
-        text-align: center;
-        padding: 60px 24px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .hero-text-side {
-        max-width: 800px;
+        height: auto;
         padding: 0;
-        animation: fadeInScale 1s ease-out;
-    }
-
-    .hero-brand-badge {
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.3em;
-        color: var(--primary);
-        margin-bottom: 24px;
-        text-transform: uppercase;
-    }
-
-    .hero-title-royal {
-        font-family: 'Playfair Display', serif;
-        font-size: clamp(3rem, 6vw, 5rem);
-        line-height: 1.1;
-        color: #1A1A1A;
-        margin-bottom: 32px;
-        font-weight: 400;
-    }
-
-    .hero-subtitle-royal {
-        font-size: 18px;
-        color: #666;
-        margin-bottom: 48px;
-        max-width: 600px;
-    }
-
-    .btn-royal-cta {
-        background: #1A1A1A;
-        color: white;
-        padding: 16px 48px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        border: none;
-        transition: all 0.3s ease;
-    }
-
-    .btn-royal-cta:hover {
-        background: #444;
-        transform: translateY(-2px);
+        text-align: center;
+        background: #FFFFFF;
     }
 
     .hero-image-side {
-        display: none;
-        /* Transitioning to Typography-First Editorial */
+        display: block !important;
+        /* Force Show Dishita */
+        order: -1;
+        /* Image Top */
+        width: 100%;
+        height: 50vh;
+        overflow: hidden;
     }
 
-    @keyframes fadeInScale {
-        from {
-            opacity: 0;
-            transform: scale(0.98);
-        }
+    .hero-img-immersive {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+    }
 
-        to {
-            opacity: 1;
-            transform: scale(1);
-        }
+    .hero-text-side {
+        padding: 40px 24px;
+        order: 1;
+    }
+
+    .hero-title-royal {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+    }
+
+    /* Fix Catalog Grid for Mobile (2 Columns) */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        padding: 0 16px;
+    }
+
+    .product-title {
+        font-size: 13px;
+        min-height: auto;
+    }
+
+    .price-rent {
+        font-size: 13px;
+    }
+
+    /* Fix Upload Form Grid Mobile */
+    .form-grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    .form-container-elite {
+        padding: 24px 16px;
     }
 
     /* Campaign: Stack Vertical */
@@ -3242,4 +3346,98 @@ h3,
     /* Verified Green */
     border-radius: 50%;
     box-shadow: 0 0 0 2px rgba(0, 208, 132, 0.2);
+}
+
+/* ===== FitMate Covers Section ===== */
+.fitmate-covers-section {
+    padding: 100px 0;
+    background: var(--bg-light);
+}
+
+.covers-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.covers-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--primary);
+    margin-bottom: 15px;
+    letter-spacing: -0.01em;
+}
+
+.covers-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.covers-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 24px;
+}
+
+.cover-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: var(--radius);
+    transition: var(--transition);
+}
+
+.cover-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.cover-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    transition: var(--transition);
+}
+
+.cover-item:hover .cover-image {
+    transform: scale(1.05);
+}
+
+/* Responsive Design for Covers */
+@media (max-width: 1024px) {
+    .covers-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .covers-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .fitmate-covers-section {
+        padding: 60px 0;
+    }
+    
+    .covers-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    
+    .covers-title {
+        font-size: 2rem;
+    }
+    
+    .covers-subtitle {
+        font-size: 1rem;
+    }
+    
+    .covers-header {
+        margin-bottom: 40px;
+    }
 }
