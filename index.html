@@ -18,36 +18,19 @@
     <div class="container-fluid">
       <div class="header-inner">
         <div class="header-left">
-          <button class="menu-trigger">
-            <span></span>
-            <span></span>
-          </button>
+          <img src="images/fitmate_logo_new.jpg" alt="FitMate" class="luxury-logo" onclick="window.location.reload()">
           <nav class="desktop-nav">
-            <a href="#" onclick="filterCategory('lehenga')">Lehengas</a>
-            <a href="#" onclick="filterCategory('sherwani')">Sherwanis</a>
-            <a href="#" onclick="filterCategory('saree')">Sarees</a>
+            <a href="#campaigns">OCCASIONS</a>
+            <a href="#" onclick="filterCategory('lehenga')">LEHENGAS</a>
+            <a href="#" onclick="filterCategory('saree')">SAREES</a>
+            <a href="about.html">ABOUT</a>
           </nav>
         </div>
 
-        <div class="header-center" onclick="window.location.reload()">
-          <img src="images/fitmate_logo_new.jpg" alt="FitMate" class="luxury-logo">
-        </div>
-
         <div class="header-right">
-          <div class="luxury-search-bar">
-            <input type="text" placeholder="Search Collection..." id="headerSearch"
-              onkeypress="handleSearchKeypress(event)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <path d="m21 21-4.35-4.35"></path>
-            </svg>
-          </div>
-          <div class="user-actions">
-            <button class="action-btn" onclick="showLogin()">Login</button>
-            <button class="btn-luxury-outline" onclick="showSignup()">Join Elite</button>
-            <button class="list-btn" onclick="window.location.href='list-your-outfit.html'"
-              title="List Your Outfit">+</button>
-          </div>
+          <button class="icon-btn" title="Search">🔍</button>
+          <button class="icon-btn" onclick="showLogin()" title="Account">👤</button>
+          <button class="icon-btn" onclick="window.location.href='list-your-outfit.html'" title="List Outfit">+</button>
         </div>
       </div>
     </div>
@@ -450,35 +433,37 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <img src="logo.jpg" alt="FitMate" class="footer-logo">
-          <p>India's premier peer-to-peer fashion marketplace</p>
+          <img src="images/fitmate_logo_new.jpg" alt="FitMate" class="footer-logo">
+          <p>India's premier peer-to-peer fashion marketplace. Own the moment, not the outfit.</p>
         </div>
         <div class="footer-col">
-          <h4>Company</h4>
-          <a href="#">About Us</a>
-          <a href="#">How It Works</a>
-          <a href="#">Contact</a>
+          <h4>Shopping</h4>
+          <a href="#products">Women's Collection</a>
+          <a href="#products">Men's Collection</a>
+          <a href="#campaigns">Wedding Edits</a>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
+          <h4>Corporate Info</h4>
+          <a href="about.html">About FitMate</a>
           <a href="damage-refund-policy.html">Damage & Refund Policy</a>
           <a href="#">Terms of Service</a>
-          <a href="#">Privacy Policy</a>
         </div>
         <div class="footer-col">
-          <h4>Follow Us</h4>
+          <h4>Social</h4>
           <a href="#">Instagram</a>
           <a href="#">Facebook</a>
-          <a href="#">Twitter</a>
+          <a href="#">Pinterest</a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 FitMate. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <span>India</span> | <span>English</span>
+        </div>
       </div>
     </div>
   </footer>
