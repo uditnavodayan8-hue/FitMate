@@ -3279,8 +3279,8 @@ h3,
     }
 
     .hero-title-royal {
-        font-size: 2.5rem;
-        line-height: 1.1;
+        font-size: 2.5rem !important;
+        line-height: 1.1 !important;
         margin-bottom: 20px;
     }
 
@@ -3457,12 +3457,12 @@ h3,
 /* Fix strikethrough price overflow on mobile */
 @media (max-width: 768px) {
     .price-card-strike {
-        font-size: 12px;
+        font-size: 12px !important;
         white-space: nowrap;
-        overflow: visible;
+        overflow: visible !important;
         text-overflow: clip;
     }
-    
+
     .price-card-amount {
         font-size: 24px;
     }
