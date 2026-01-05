@@ -7,31 +7,40 @@
   <title>FitMate - Rental for Every Occasion | India's P2P Fashion Marketplace</title>
   <meta name="description"
     content="Rent designer clothes or list your wardrobe. India's premium peer-to-peer fashion marketplace. Browse wedding wear, party outfits & casual wear across 50+ cities.">
-  <link rel="stylesheet" href="elite-styles.css?v=6.0">
+  <link rel="stylesheet" href="elite-styles.css?v=7.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
 <body>
-  <!-- Elite Luxury Header -->
+  <!-- Professional Header -->
   <header class="header-luxury">
     <div class="container-fluid">
       <div class="header-inner">
         <div class="header-left">
           <div class="logo-text" onclick="window.location.href='index.html'">FITMATE</div>
-          <nav class="desktop-nav">
-            <a href="index.html#products">CLOTHING</a>
-            <a href="index.html#campaigns">OCCASIONS</a>
-            <a href="damage-refund-policy.html">HOW IT WORKS</a>
-            <a href="about.html">ABOUT</a>
-          </nav>
         </div>
 
         <div class="header-right">
-          <button class="icon-btn" title="Search">🔍</button>
-          <button class="icon-btn" onclick="showLogin()" title="Account">👤</button>
-          <button class="icon-btn" onclick="window.location.href='list-your-outfit.html'" title="List Your Outfit">LIST
-            +</button>
+          <button class="icon-btn-pro" title="Search" aria-label="Search">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.35-4.35"></path>
+            </svg>
+          </button>
+          <button class="icon-btn-pro" title="Account" aria-label="Account">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+          <button class="btn-list-pro" onclick="window.location.href='list-your-outfit.html'" title="List Your Outfit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+            <span>LIST</span>
+          </button>
         </div>
       </div>
     </div>
