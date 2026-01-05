@@ -3271,7 +3271,11 @@ h3,
     .hero-text-side {
         padding: 40px 24px;
         order: 1;
-        text-align: center;
+        text-align: center !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
     }
 
     .hero-brand-badge {
@@ -3465,5 +3469,19 @@ h3,
 
     .price-card-amount {
         font-size: 24px;
+    }
+}
+
+/* Fix product price truncation on mobile */
+@media (max-width: 768px) {
+    .product-price {
+        font-size: 11px !important;
+        white-space: normal !important;
+        overflow: visible !important;
+    }
+    
+    .product-price-original {
+        font-size: 10px !important;
+        white-space: normal !important;
     }
 }
