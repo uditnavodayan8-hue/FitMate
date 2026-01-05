@@ -557,6 +557,33 @@ h3,
     transform: scale(1.05);
 }
 
+/* Zara-Style Dominant Logo */
+.header-center {
+    flex-grow: 1;
+    /* Allow logo container to take space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.luxury-logo {
+    height: 80px;
+    /* Much larger desktop height */
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    /* Assuming white bg on jpg, this blends it if header isn't pure white */
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .luxury-logo {
+        height: 50px;
+        /* Prominent mobile height */
+    }
+}
+
 .mag-overlay {
     position: absolute;
     bottom: 0;
@@ -3037,4 +3064,31 @@ h3,
         transform: translateY(0);
         background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     }
+
+}
+
+/* Trust Badge - Digital Twin Verified */
+.verification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(26, 26, 26, 0.05);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(26, 26, 26, 0.1);
+}
+
+.verification-icon {
+    width: 6px;
+    height: 6px;
+    background: #00D084;
+    /* Verified Green */
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(0, 208, 132, 0.2);
 }
