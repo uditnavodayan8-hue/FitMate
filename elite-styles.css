@@ -669,6 +669,18 @@ h3,
     gap: 12px;
 }
 
+/* Elite Luxury Header */
+.header-luxury {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    transition: all 0.3s ease;
+}
+
 .filter-select {
     border-radius: 0;
     border: none;
