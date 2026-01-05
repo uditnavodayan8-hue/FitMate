@@ -1,30 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    /* Quiet Luxury Palette */
+    /* RTR Pure White Design System */
     --primary: #1A1A1A;
     /* Deep Charcoal */
     --primary-light: #333333;
-    --accent: #C5A059;
-    /* Champagne Gold */
-    --accent-light: #D4B681;
+    --accent: #E50010;
+    /* RTR Alert Red */
+    --accent-light: #FF4D4D;
     --text: #1A1A1A;
-    --text-secondary: #555555;
+    --text-secondary: #666666;
     --bg: #FFFFFF;
-    --bg-light: #FBF9F6;
-    /* Off-White / Cream */
-    --bg-accent: #F2EEED;
-    /* Greige */
-    --border: #E8E5E2;
-    --border-light: #F0EDE9;
+    /* Pure White Base */
+    --bg-light: #FFFFFF;
+    /* Pure White for Background-Matching */
+    --bg-accent: #F9F9F9;
+    /* Off-White Section */
+    --border: #E5E5E5;
+    /* Thin Gray Border */
+    --border-light: #F2F2F2;
 
-    /* Refined Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.02);
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.06);
-    --shadow-xl: 0 30px 60px rgba(0, 0, 0, 0.08);
+    /* Refined Shadows - Discreet */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.02);
+    --shadow-xl: 0 10px 40px rgba(0, 0, 0, 0.03);
 
-    --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
     --radius-sm: 4px;
     --radius: 8px;
     --radius-lg: 12px;
@@ -718,44 +720,57 @@ h3,
     gap: 12px;
 }
 
-/* H&M Style Header */
+/* RTR Style Header Integration */
 .header-luxury {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #fff;
-    border-bottom: 1px solid #e5e5e5;
-    padding: 16px 0;
+    background: #FFFFFF;
+    /* Perfect Match with Logo Background */
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    transition: background 0.3s ease;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 32px;
 }
 
 .header-left {
-    flex-shrink: 0;
-}
-
-.header-nav {
     display: flex;
-    gap: 32px;
-    margin-left: 40px;
+    align-items: center;
+    gap: 40px;
 }
 
-.header-nav a {
+.desktop-nav {
+    display: flex;
+    gap: 28px;
+}
+
+.desktop-nav a {
     font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    color: #222;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #1A1A1A;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: color 0.2s;
+    transition: opacity 0.2s;
 }
 
-.header-nav a:hover {
-    color: #e50010;
+.desktop-nav a:hover {
+    opacity: 0.6;
+}
+
+.luxury-logo {
+    height: 32px;
+    /* Professional RTR scale */
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: normal;
+    /* No blending needed on white bg */
 }
 
 .header-right {
@@ -767,10 +782,11 @@ h3,
 .icon-btn {
     background: none;
     border: none;
-    font-size: 20px;
+    font-size: 18px;
     cursor: pointer;
     padding: 8px;
-    color: #222;
+    color: #1A1A1A;
+    font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -3105,32 +3121,82 @@ h3,
 
 @media (max-width: 768px) {
 
-    /* Hero: Stack Vertical, Image First for impact */
+    /* RTR Editorial Hero */
     .hero-immersive-split {
-        grid-template-columns: 1fr;
-        height: auto;
-    }
-
-    .hero-image-side {
-        height: 65vh;
-        /* Tall hero image */
-        order: -1;
-        /* Image on top */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 80vh;
+        background: #FFFFFF;
+        text-align: center;
+        padding: 60px 24px;
+        border-bottom: 1px solid var(--border);
     }
 
     .hero-text-side {
-        padding: 40px 24px;
-        text-align: center;
-        align-items: center;
+        max-width: 800px;
+        padding: 0;
+        animation: fadeInScale 1s ease-out;
+    }
+
+    .hero-brand-badge {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.3em;
+        color: var(--primary);
+        margin-bottom: 24px;
+        text-transform: uppercase;
     }
 
     .hero-title-royal {
-        font-size: 3.2rem;
+        font-family: 'Playfair Display', serif;
+        font-size: clamp(3rem, 6vw, 5rem);
+        line-height: 1.1;
+        color: #1A1A1A;
+        margin-bottom: 32px;
+        font-weight: 400;
     }
 
     .hero-subtitle-royal {
-        font-size: 1rem;
-        margin-bottom: 32px;
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 48px;
+        max-width: 600px;
+    }
+
+    .btn-royal-cta {
+        background: #1A1A1A;
+        color: white;
+        padding: 16px 48px;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-royal-cta:hover {
+        background: #444;
+        transform: translateY(-2px);
+    }
+
+    .hero-image-side {
+        display: none;
+        /* Transitioning to Typography-First Editorial */
+    }
+
+    @keyframes fadeInScale {
+        from {
+            opacity: 0;
+            transform: scale(0.98);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
     }
 
     /* Campaign: Stack Vertical */
