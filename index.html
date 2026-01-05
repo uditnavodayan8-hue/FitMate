@@ -54,84 +54,55 @@
   </header>
 
   <!-- Forbes Editorial Hero -->
-  <section class="editorial-forbes">
-    <div class="container">
-      <div class="forbes-grid">
-        <div class="forbes-content-elite">
-          <span class="forbes-badge">FitMate Platform / 2026</span>
-          <h1 class="forbes-quote-serif">"Rent Designer Fashion.<br>Earn from Your Wardrobe."</h1>
-          <p class="hero-lead"
-            style="color: var(--text-secondary); font-size: 1.4rem; text-align: left; margin-left: 0;">
-            India's first peer-to-peer luxury fashion marketplace. Access premium designer wear for every occasion, or
-            monetize your own wardrobe effortlessly.
-          </p>
-
-          <div class="forbes-metadata">
-            <div class="metadata-item-elite">
-              <h4>Platform</h4>
-              <p>P2P Marketplace</p>
-            </div>
-            <div class="metadata-item-elite">
-              <h4>Trust</h4>
-              <p>Verified Sellers</p>
-            </div>
-          </div>
-
-          <div class="hero-cta-group" style="justify-content: flex-start; margin-top: 50px;">
-            <button class="btn-luxury-fill" style="background: var(--primary); color: white;"
-              onclick="scrollToProducts()">Explore Collection</button>
-            <button class="btn-luxury-ghost" style="color: var(--primary); border-color: var(--primary);"
-              onclick="window.location.href='list-your-outfit.html'">List Your Outfit</button>
-          </div>
-        </div>
-
-        <div class="forbes-image-wrapper">
-          <img src="images/dishita_pink_front.png" alt="Premium Designer Fashion on FitMate" class="forbes-image-main">
-          <div class="forbes-caption-box">
-            <strong>Premium Collection</strong>
-            <p>Designer pieces from verified sellers across India.</p>
-          </div>
-        </div>
-      </div>
+  <!-- Sabyasachi Immersive Hero -->
+  <section class="hero-immersive-split">
+    <div class="hero-text-side">
+      <div class="hero-brand-badge">FitMate Royal • Est. 2026</div>
+      <h1 class="hero-title-royal">Luxury<br>Redefined.</h1>
+      <p class="hero-subtitle-royal">
+        India's first invitation-only rental marketplace. Access the "Better than Sabyasachi" collection from verified
+        super-sellers.
+      </p>
+      <a href="#campaigns" class="btn-royal-cta">Enter The Royal Edit</a>
+    </div>
+    <div class="hero-image-side">
+      <img src="images/hero_portrait_dishita.png" alt="Dishita for FitMate Royal" class="hero-img-immersive">
     </div>
   </section>
 
   <!-- Curated Magazine Section -->
-  <section class="curated-magazine">
-    <div class="container">
-      <div class="section-magazine-header">
-        <h2 class="serif-title">The Curated Edit</h2>
-        <p class="editorial-note">Hand-picked selections for the modern connoisseur.</p>
+  <!-- Sabyasachi Campaign Grid -->
+  <section class="editorial-campaign-grid" id="campaigns">
+    <div class="campaign-header-block">
+      <h2 class="campaign-title">The Royal Campaigns</h2>
+      <span class="campaign-subtitle">Vol 01. The Dishita Edit</span>
+    </div>
+
+    <div class="campaign-row">
+      <!-- Card 1: Pink -->
+      <div class="campaign-card" onclick="filterCategory('lehenga')">
+        <img src="images/collection_pink_lehenga.png" alt="The Pink Collection" class="campaign-img">
+        <div class="campaign-overlay-info">
+          <h3 class="campaign-name">The Pink Edit</h3>
+          <p class="campaign-desc">Minimalist Zardozi & Crystal Work</p>
+        </div>
       </div>
 
-      <div class="magazine-grid">
-        <div class="mag-item large" onclick="filterCategory('lehenga')">
-          <div class="mag-img-container">
-            <img src="images/dishita_red_side.png" alt="Bridal Selection">
-            <div class="mag-overlay">
-              <span class="mag-tag">Editorial</span>
-              <h3>The Bridal Masterpieces</h3>
-              <p>Iconic silhouettes for the modern bride.</p>
-            </div>
-          </div>
+      <!-- Card 2: Red -->
+      <div class="campaign-card" onclick="filterCategory('bridal')">
+        <img src="images/collection_red_bridal.png" alt="The Bridal Edit" class="campaign-img">
+        <div class="campaign-overlay-info">
+          <h3 class="campaign-name">Royal Bridal</h3>
+          <p class="campaign-desc">Deep Velvet & Antique Gold</p>
         </div>
-        <div class="mag-item-column">
-          <div class="mag-item small" onclick="filterCategory('sherwani')">
-            <div class="mag-img-container">
-              <img src="images/sherwani_ivory_gold_1767449753183.png" alt="Men's Couture">
-              <div class="mag-overlay">
-                <h3>Men's Couture</h3>
-              </div>
-            </div>
-          </div>
-          <div class="mag-item small" onclick="filterCategory('partywear')">
-            <div class="mag-img-container">
-              <img src="images/dishita_pink_twirl.png" alt="Midnight Chic">
-              <div class="mag-overlay">
-                <h3>Twirl & Shine</h3>
-              </div>
-            </div>
-          </div>
+      </div>
+
+      <!-- Card 3: Green -->
+      <div class="campaign-card" onclick="filterCategory('saree')">
+        <img src="images/collection_emerald_saree.png" alt="The Heritage Collection" class="campaign-img">
+        <div class="campaign-overlay-info">
+          <h3 class="campaign-name">Heritage Silk</h3>
+          <p class="campaign-desc">Hand-loomed Emerald Perfection</p>
         </div>
       </div>
     </div>

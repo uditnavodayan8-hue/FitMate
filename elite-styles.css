@@ -2729,3 +2729,240 @@ h3,
         font-size: 1.75rem;
     }
 }
+
+/* =========================================
+   SABYASACHI-INSPIRED REDESIGN (Immersive)
+   ========================================= */
+
+/* Immersive Hero Section */
+.hero-immersive-split {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    height: 90vh;
+    /* Immersive height */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.hero-text-side {
+    background: #FDFBF7;
+    /* Creamy luxe background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-brand-badge {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.hero-title-royal {
+    font-family: 'Playfair Display', serif;
+    font-size: 5.5rem;
+    line-height: 0.95;
+    color: #1a1a1a;
+    margin-bottom: 32px;
+}
+
+.hero-subtitle-royal {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    max-width: 400px;
+    margin-bottom: 48px;
+    font-weight: 300;
+}
+
+.btn-royal-cta {
+    display: inline-block;
+    padding: 18px 42px;
+    background: #1a1a1a;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    border: 1px solid #1a1a1a;
+    transition: all 0.4s ease;
+    width: fit-content;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-royal-cta:hover {
+    background: transparent;
+    color: #1a1a1a;
+}
+
+.hero-image-side {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.hero-img-immersive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+}
+
+/* Campaign/Magazine Grid (Full Width) */
+.editorial-campaign-grid {
+    width: 100%;
+    background: #fff;
+}
+
+.campaign-header-block {
+    text-align: center;
+    padding: 80px 20px 40px;
+}
+
+.campaign-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.campaign-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.campaign-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    height: 85vh;
+    /* Immersive height */
+}
+
+.campaign-card {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.campaign-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.campaign-card:hover .campaign-img {
+    transform: scale(1.05);
+    /* Subtle zoom */
+}
+
+.campaign-overlay-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    color: white;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.campaign-card:hover .campaign-overlay-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.campaign-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.campaign-desc {
+    font-size: 0.9rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS (IMPACT)
+   ========================================= */
+@media (max-width: 1024px) {
+    .hero-title-royal {
+        font-size: 4rem;
+    }
+
+    .hero-immersive-split {
+        height: auto;
+        min-height: 80vh;
+    }
+
+    .campaign-row {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Hero: Stack Vertical, Image First for impact */
+    .hero-immersive-split {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .hero-image-side {
+        height: 65vh;
+        /* Tall hero image */
+        order: -1;
+        /* Image on top */
+    }
+
+    .hero-text-side {
+        padding: 40px 24px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-title-royal {
+        font-size: 3.2rem;
+    }
+
+    .hero-subtitle-royal {
+        font-size: 1rem;
+        margin-bottom: 32px;
+    }
+
+    /* Campaign: Stack Vertical */
+    .campaign-row {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .campaign-card {
+        height: 70vh;
+        /* Full screen scrolling experience */
+    }
+
+    .campaign-overlay-info {
+        opacity: 1;
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    }
+}
