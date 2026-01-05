@@ -557,7 +557,7 @@ h3,
     transform: scale(1.05);
 }
 
-/* Zara-Style Dominant Logo */
+/* Zara-Style Dominant Logo - Refined */
 .header-center {
     flex-grow: 1;
     /* Allow logo container to take space */
@@ -567,20 +567,19 @@ h3,
 }
 
 .luxury-logo {
-    height: 80px;
-    /* Much larger desktop height */
+    height: 48px;
+    /* Sleek Desktop Height (Apple Standard) */
     max-height: 100%;
     width: auto;
     object-fit: contain;
-    mix-blend-mode: multiply;
-    /* Assuming white bg on jpg, this blends it if header isn't pure white */
+    /* mix-blend-mode removed for cleaner scrolling */
     transition: transform 0.3s ease;
 }
 
 @media (max-width: 768px) {
     .luxury-logo {
-        height: 50px;
-        /* Prominent mobile height */
+        height: 32px;
+        /* Standard Mobile Bar Height */
     }
 }
 
@@ -701,15 +700,14 @@ h3,
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.72);
-    /* Translucent Apple-like white */
+    background: rgba(255, 255, 255, 0.90);
+    /* Higher opacity for cleaner look */
     backdrop-filter: saturate(180%) blur(20px);
     /* The "Apple Blur" */
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    /* Extremely subtle border */
-    padding: 12px 0;
-    /* Sleek height */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    /* Tighter padding */
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
@@ -734,10 +732,10 @@ h3,
     background: #000;
     color: #fff;
     border: none;
-    border-radius: 20px;
-    /* Pill shape */
-    padding: 8px 20px;
-    font-size: 12px;
+    border-radius: 30px;
+    /* Sleek Pill */
+    padding: 8px 24px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 0.02em;
     cursor: pointer;
