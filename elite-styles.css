@@ -3271,11 +3271,23 @@ h3,
     .hero-text-side {
         padding: 40px 24px;
         order: 1;
+        text-align: center;
+    }
+
+    .hero-brand-badge {
+        font-size: 0.75rem;
     }
 
     .hero-title-royal {
         font-size: 2.5rem;
-        margin-bottom: 16px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle-royal {
+        font-size: 1rem;
+        margin-bottom: 32px;
+        max-width: 100%;
     }
 
     /* Fix Catalog Grid for Mobile (2 Columns) */
@@ -3413,7 +3425,7 @@ h3,
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
     }
-    
+
     .covers-title {
         font-size: 2.5rem;
     }
@@ -3423,21 +3435,35 @@ h3,
     .fitmate-covers-section {
         padding: 60px 0;
     }
-    
+
     .covers-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
-    
+
     .covers-title {
         font-size: 2rem;
     }
-    
+
     .covers-subtitle {
         font-size: 1rem;
     }
-    
+
     .covers-header {
         margin-bottom: 40px;
+    }
+}
+
+/* Fix strikethrough price overflow on mobile */
+@media (max-width: 768px) {
+    .price-card-strike {
+        font-size: 12px;
+        white-space: nowrap;
+        overflow: visible;
+        text-overflow: clip;
+    }
+    
+    .price-card-amount {
+        font-size: 24px;
     }
 }
