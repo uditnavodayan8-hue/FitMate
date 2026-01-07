@@ -1069,3 +1069,86 @@ function loadReviews() {
     });
     reviewsList.innerHTML = html;
 }
+
+// ========== PHASE 4: ADDITIONAL FEATURES ==========
+
+// Wishlist Management
+var wishlist = JSON.parse(localStorage.getItem('fitmate_wishlist') || '[]');
+
+function toggleWishlist(productId, event) {
+    if (event) event.stopPropagation();
+    var index = wishlist.indexOf(productId);
+    if (index > -1) {
+        wishlist.splice(index, 1);
+    } else {
+        wishlist.push(productId);
+    }
+    localStorage.setItem('fitmate_wishlist', JSON.stringify(wishlist));
+    updateWishlistUI();
+}
+
+function isInWishlist(productId) {
+    return wishlist.indexOf(productId) > -1;
+}
+
+function updateWishlistUI() {
+    document.querySelectorAll('.wishlist-btn').forEach(function(btn) {
+        var productId = parseInt(btn.getAttribute('data-product-id'));
+        if (isInWishlist(productId)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+}
+
+// Related Products
+function loadRelatedProducts(currentProduct) {
+    var container = document.getElementById('relatedProductsCarousel');
+    if (!container || !currentProduct) return;
+    
+    var related = productCatalog.filter(function(p) {
+        return p.category === currentProduct.category && p.id !== currentProduct.id;
+    }).slice(0, 6);
+    
+    var html = '';
+    related.forEach(function(product) {
+        html += '<div class="related-product-card" onclick="openProductDetail(' + product.id + ')">';
+        html += '<img src="' + product.image + '" alt="' + product.title + '" class="related-product-image">';
+        html += '<div class="related-product-info">';
+        html += '<div class="related-product-title">' + product.title + '</div>';
+        html += '<div class="related-product-price">Rs. ' + product.rentPrice.toLocaleString() + '/day</div>';
+        html += '</div></div>';
+    });
+    
+    container.innerHTML = html;
+}
+
+// Social Proof
+function getSocialProofBadges(product) {
+    var badges = '';
+    var rentalCount = Math.floor(Math.random() * 50) + 10;
+    
+    if (rentalCount > 40) {
+        badges += '<span class="badge-trending">Trending</span>';
+    } else if (rentalCount > 30) {
+        badges += '<span class="badge-popular">Popular</span>';
+    }
+    
+    if (product.id > 900) {
+        badges += '<span class="badge-new">New Arrival</span>';
+    }
+    
+    return badges;
+}
+
+function getSocialProofText(product) {
+    var rentalCount = Math.floor(Math.random() * 50) + 10;
+    var responseTime = Math.floor(Math.random() * 4) + 1;
+    
+    var html = '<div class="rental-count">' + rentalCount + ' people rented this month</div>';
+    html += '<div class="owner-response"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+    html += 'Owner responds in ' + responseTime + ' hours</div>';
+    
+    return html;
+}

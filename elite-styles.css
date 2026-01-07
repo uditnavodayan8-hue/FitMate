@@ -4118,3 +4118,186 @@ h3,
         font-size: 0.9rem;
     }
 }
+
+/* ========== PHASE 4: ADDITIONAL FEATURES ========== */
+
+/* Related Products Carousel */
+.related-products-section {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid #eee;
+}
+
+.related-products-section h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.related-products-carousel {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.related-products-carousel::-webkit-scrollbar {
+    height: 6px;
+}
+
+.related-products-carousel::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.related-products-carousel::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.related-product-card {
+    min-width: 200px;
+    max-width: 200px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.related-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.related-product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.related-product-info {
+    padding: 12px;
+}
+
+.related-product-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.related-product-price {
+    font-size: 1rem;
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* Wishlist Heart Icon */
+.wishlist-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.wishlist-btn:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+.wishlist-btn svg {
+    width: 20px;
+    height: 20px;
+    transition: all 0.2s ease;
+}
+
+.wishlist-btn.active svg {
+    fill: #ff4757;
+    stroke: #ff4757;
+}
+
+/* Social Proof Badges */
+.social-proof-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.badge-trending,
+.badge-popular,
+.badge-new {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-trending {
+    background: #fff5e6;
+    color: #ff9800;
+}
+
+.badge-popular {
+    background: #e8f5e9;
+    color: #4caf50;
+}
+
+.badge-new {
+    background: #e3f2fd;
+    color: #2196f3;
+}
+
+.rental-count {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 8px;
+}
+
+.owner-response {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: #4caf50;
+    margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+    .related-product-card {
+        min-width: 160px;
+        max-width: 160px;
+    }
+
+    .related-product-image {
+        height: 160px;
+    }
+
+    .wishlist-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    .wishlist-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
