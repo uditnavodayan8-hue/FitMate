@@ -7,7 +7,7 @@
   <title>FitMate - Rental for Every Occasion | India's P2P Fashion Marketplace</title>
   <meta name="description"
     content="Rent designer clothes or list your wardrobe. India's premium peer-to-peer fashion marketplace. Browse wedding wear, party outfits & casual wear across 50+ cities.">
-  <link rel="stylesheet" href="elite-styles.css?v=21.0">
+  <link rel="stylesheet" href="elite-styles.css?v=22.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -355,7 +355,38 @@
     </div>
   </div>
 
+  <!-- Date Picker Modal -->
+  <div id="datePickerModal" class="modal-overlay" style="display: none;"
+    onclick="if(event.target===this) closeDatePicker()">
+    <div class="modal-content-small">
+      <h2 id="datePickerTitle">Select Rental Period</h2>
+      <div class="form-group">
+        <label>Start Date</label>
+        <input type="date" id="rentalStartDate" required>
+      </div>
+      <div class="form-group">
+        <label>End Date</label>
+        <input type="date" id="rentalEndDate" required>
+      </div>
+      <div class="modal-actions">
+        <button onclick="closeDatePicker()" class="btn-secondary">Cancel</button>
+        <button onclick="confirmBooking()" class="btn-primary">Confirm Booking</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Confirmation Modal -->
+  <div id="bookingConfirmationModal" class="modal-overlay" style="display: none;"
+    onclick="if(event.target===this) closeBookingConfirmation()">
+    <div class="modal-content-small">
+      <div id="confirmationContent"></div>
+      <button onclick="closeBookingConfirmation()" class="btn-primary"
+        style="width: 100%; margin-top: 24px;">Done</button>
+    </div>
+  </div>
+
   <!-- Listing Form Modal -->
+
   <div id="listingModal" class="modal-overlay" style="display: none;" onclick="handleModalOverlayClick(event)">
     <div class="modal-listing">
       <button class="modal-close-btn" onclick="closeAllModals()">

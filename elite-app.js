@@ -929,4 +929,104 @@ document.addEventListener('DOMContentLoaded', function () {
     initSearch();
 });
 
+// ========== BOOKING FLOW ==========
+var currentProductData = null;
 
+function handleRent() {
+    if (!currentProductData) return;
+    showDatePicker();
+}
+
+function handleBuy() {
+    if (!currentProductData) return;
+    if (confirm('Purchase ' + currentProductData.title + ' for ₹' + currentProductData.buyPrice.toLocaleString() + '?\n\nThis will proceed to secure checkout.')) {
+        closeProductModal();
+        showBookingConfirmation('buy');
+    }
+}
+
+function showDatePicker() {
+    var modal = document.getElementById('datePickerModal');
+    if (!modal || !currentProductData) return;
+
+    document.getElementById('datePickerTitle').textContent = 'Select Rental Period - ' + currentProductData.title;
+
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById('rentalStartDate').setAttribute('min', today);
+    document.getElementById('rentalEndDate').setAttribute('min', today);
+
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDatePicker() {
+    var modal = document.getElementById('datePickerModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        document.getElementById('rentalStartDate').value = '';
+        document.getElementById('rentalEndDate').value = '';
+    }
+}
+
+function confirmBooking() {
+    var startDate = document.getElementById('rentalStartDate').value;
+    var endDate = document.getElementById('rentalEndDate').value;
+
+    if (!startDate || !endDate) {
+        alert('Please select both start and end dates');
+        return;
+    }
+
+    var start = new Date(startDate);
+    var end = new Date(endDate);
+
+    if (end <= start) {
+        alert('End date must be after start date');
+        return;
+    }
+
+    var days = Math.ceil((end - start) / (1000 * 60 * 60 * 24));
+    var totalCost = days * currentProductData.rentPrice;
+
+    closeDatePicker();
+    closeProductModal();
+    showBookingConfirmation('rent', { startDate: startDate, endDate: endDate, days: days, totalCost: totalCost });
+}
+
+function showBookingConfirmation(type, details) {
+    var modal = document.getElementById('bookingConfirmationModal');
+    var content = document.getElementById('confirmationContent');
+    if (!modal || !content || !currentProductData) return;
+
+    var message = '';
+    if (type === 'rent' && details) {
+        message = '<h2>✓ Booking Confirmed!</h2>';
+        message += '<div class="confirmation-details">';
+        message += '<p><strong>' + currentProductData.title + '</strong></p>';
+        message += '<p>Rental Period: ' + details.startDate + ' to ' + details.endDate + '</p>';
+        message += '<p>Duration: ' + details.days + ' days</p>';
+        message += '<p class="total-cost">Total: ₹' + details.totalCost.toLocaleString() + '</p>';
+        message += '<p class="confirmation-note">The owner will review your request. You\'ll receive a confirmation email within 24 hours.</p>';
+        message += '</div>';
+    } else {
+        message = '<h2>✓ Purchase Initiated!</h2>';
+        message += '<div class="confirmation-details">';
+        message += '<p><strong>' + currentProductData.title + '</strong></p>';
+        message += '<p class="total-cost">Amount: ₹' + currentProductData.buyPrice.toLocaleString() + '</p>';
+        message += '<p class="confirmation-note">Proceeding to secure checkout. You\'ll be redirected to the payment gateway.</p>';
+        message += '</div>';
+    }
+
+    content.innerHTML = message;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeBookingConfirmation() {
+    var modal = document.getElementById('bookingConfirmationModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
