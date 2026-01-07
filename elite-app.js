@@ -568,6 +568,7 @@ function openProductDetail(productId) {
     // Show modal
     document.getElementById('productModal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
+    loadRelatedProducts(product);
 }
 
 // Close Product Modal
