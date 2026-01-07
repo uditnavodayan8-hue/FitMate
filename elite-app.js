@@ -930,7 +930,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ========== BOOKING FLOW ==========
-var currentProductData = null;
+// currentProductData is already declared above
 
 function handleRent() {
     if (!currentProductData) return;
