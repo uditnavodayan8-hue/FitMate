@@ -827,3 +827,106 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSliders();
 });
 
+
+
+// ========== MOBILE NAVIGATION ==========
+function initMobileNav() {
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const closeNavBtn = document.getElementById('closeNavBtn');
+
+    if (!hamburgerBtn || !mobileNavDrawer) return;
+
+    function openNav() {
+        mobileNavDrawer.classList.add('active');
+        mobileNavOverlay.classList.add('active');
+        hamburgerBtn.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeNav() {
+        mobileNavDrawer.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        hamburgerBtn.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', openNav);
+    if (closeNavBtn) closeNavBtn.addEventListener('click', closeNav);
+    if (mobileNavOverlay) mobileNavOverlay.addEventListener('click', closeNav);
+
+    document.querySelectorAll('.mobile-nav-link').forEach(function (link) {
+        link.addEventListener('click', closeNav);
+    });
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', function () {
+    initMobileNav();
+});
+
+// ========== SEARCH FUNCTIONALITY ==========
+function initSearch() {
+    var searchBtn = document.getElementById('searchBtn');
+    if (searchBtn) {
+        searchBtn.addEventListener('click', function () {
+            var searchModal = document.getElementById('searchModal');
+            if (searchModal) {
+                searchModal.style.display = 'flex';
+                document.getElementById('searchInput').focus();
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+}
+
+function closeSearchModal() {
+    var searchModal = document.getElementById('searchModal');
+    if (searchModal) {
+        searchModal.style.display = 'none';
+        document.body.style.overflow = '';
+        document.getElementById('searchInput').value = '';
+        document.getElementById('searchResults').innerHTML = '<p class="search-empty">Start typing to search...</p>';
+    }
+}
+
+function handleSearch() {
+    var searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+    var resultsContainer = document.getElementById('searchResults');
+
+    if (!searchTerm) {
+        resultsContainer.innerHTML = '<p class="search-empty">Start typing to search...</p>';
+        return;
+    }
+
+    var results = productCatalog.filter(function (product) {
+        return product.title.toLowerCase().includes(searchTerm) ||
+            product.category.toLowerCase().includes(searchTerm) ||
+            product.description.toLowerCase().includes(searchTerm) ||
+            product.location.toLowerCase().includes(searchTerm);
+    });
+
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p class="search-empty">No products found</p>';
+        return;
+    }
+
+    var html = '';
+    results.slice(0, 6).forEach(function (product) {
+        html += '<div class="search-result-item" onclick="openProductDetail(' + product.id + '); closeSearchModal();">';
+        html += '<img src="' + product.image + '" alt="' + product.title + '">';
+        html += '<div class="search-result-info">';
+        html += '<div class="search-result-title">' + product.title + '</div>';
+        html += '<div class="search-result-price">₹' + product.rentPrice.toLocaleString() + '/day</div>';
+        html += '</div></div>';
+    });
+    resultsContainer.innerHTML = html;
+}
+
+// Combined initialization
+document.addEventListener('DOMContentLoaded', function () {
+    initSearch();
+});
+
+
