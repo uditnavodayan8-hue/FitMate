@@ -1030,3 +1030,42 @@ function closeBookingConfirmation() {
         document.body.style.overflow = '';
     }
 }
+
+// ========== AMAZON-STYLE FEATURES ==========
+
+// Tab Switching
+function switchTab(event, tabName) {
+    document.querySelectorAll('.product-tab').forEach(function(tab) { tab.classList.remove('active'); });
+    document.querySelectorAll('.tab-content').forEach(function(content) { content.classList.remove('active'); });
+    event.target.classList.add('active');
+    var tabContent = document.getElementById(tabName);
+    if (tabContent) tabContent.classList.add('active');
+    if (tabName === 'reviews') loadReviews();
+}
+
+// Mock Reviews
+var mockReviews = [
+    { name: 'Priya S.', rating: 5, date: 'Dec 2025', text: 'Absolutely stunning! Quality exceeded expectations.', verified: true },
+    { name: 'Ananya M.', rating: 5, date: 'Nov 2025', text: 'Got so many compliments! On-time delivery.', verified: true },
+    { name: 'Kavya R.', rating: 4, date: 'Nov 2025', text: 'Beautiful outfit, great rental experience.', verified: true },
+    { name: 'Neha K.', rating: 5, date: 'Oct 2025', text: 'Premium quality at affordable prices!', verified: true }
+];
+
+function loadReviews() {
+    var reviewsList = document.getElementById('reviewsList');
+    if (!reviewsList || reviewsList.innerHTML.trim() !== '') return;
+    var html = '';
+    mockReviews.forEach(function(review) {
+        var stars = '';
+        for (var i = 0; i < review.rating; i++) stars += String.fromCharCode(9733);
+        for (var j = review.rating; j < 5; j++) stars += String.fromCharCode(9734);
+        var badge = review.verified ? '<span class="verified-badge">Verified</span>' : '';
+        html += '<div class="review-card"><div class="review-header"><div class="review-author">';
+        html += '<div class="review-avatar">' + review.name.charAt(0) + '</div>';
+        html += '<div><div class="review-name">' + review.name + ' ' + badge + '</div>';
+        html += '<div class="review-date">' + review.date + '</div></div></div>';
+        html += '<div class="review-rating">' + stars + '</div></div>';
+        html += '<p class="review-text">' + review.text + '</p></div>';
+    });
+    reviewsList.innerHTML = html;
+}
