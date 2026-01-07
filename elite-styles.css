@@ -3993,3 +3993,128 @@ h3,
 .review-date { font-size: 0.85rem; color: #666; }
 .review-rating { color: #FFA500; font-size: 1.1rem; }
 .review-text { color: #666; line-height: 1.6; margin: 0; }
+
+/* ========== MOBILE OPTIMIZATIONS ========== */
+
+/* Touch-friendly buttons */
+@media (max-width: 768px) {
+    .btn-price-card,
+    .category-tab,
+    .product-tab,
+    .btn-primary,
+    .btn-secondary {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+    }
+
+    /* Product modal mobile */
+    .modal-product {
+        width: 100%;
+        max-width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+        overflow-y: auto;
+    }
+
+    .modal-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .modal-image-section {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: white;
+    }
+
+    /* Product tabs mobile */
+    .product-tabs {
+        border-bottom: 1px solid #eee;
+        padding: 8px 0;
+    }
+
+    .product-tab {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+
+    /* Size table mobile */
+    .size-table {
+        font-size: 0.85rem;
+    }
+
+    .size-table th,
+    .size-table td {
+        padding: 8px 4px;
+    }
+
+    /* Mobile product cards */
+    .product-card {
+        border-radius: 12px;
+    }
+
+    .product-card-image {
+        border-radius: 12px 12px 0 0;
+    }
+
+    /* Hero mobile */
+    .hero-immersive-split {
+        flex-direction: column;
+        min-height: 60vh;
+    }
+
+    .hero-text-side,
+    .hero-image-side {
+        width: 100%;
+    }
+
+    .hero-title-royal {
+        font-size: 2rem;
+    }
+
+    /* Date picker mobile */
+    .modal-content-small {
+        width: 95%;
+        padding: 24px;
+    }
+
+    /* Booking buttons mobile */
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions button {
+        width: 100%;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    .category-tab {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .product-tab {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .pricing-cards {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .review-card {
+        padding: 16px;
+    }
+
+    .specs-table th,
+    .specs-table td {
+        padding: 12px 8px;
+        font-size: 0.9rem;
+    }
+}
